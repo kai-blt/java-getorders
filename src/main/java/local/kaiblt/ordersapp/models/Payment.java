@@ -1,5 +1,7 @@
 package local.kaiblt.ordersapp.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,6 +18,7 @@ public class Payment {
 
     //***** Table Relationships *****//
     @ManyToMany(mappedBy = "payments")
+    @JsonIgnoreProperties(value = "payments", allowSetters = true)
     private Set<Order> orders = new HashSet<>();
 
 

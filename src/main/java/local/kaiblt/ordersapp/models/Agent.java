@@ -1,5 +1,7 @@
 package local.kaiblt.ordersapp.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,18 +23,29 @@ public class Agent {
     //***** Table Relationships *****//
     //One to many relationship with the Customers Table
     @OneToMany(mappedBy = "agent", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties(value = "agent", allowSetters = true)
     private List<Customer> customers = new ArrayList<>();
 
     //***** Constructors *****//
     public Agent() {
         //default constructor for JPA
     }
+
     public Agent(String agentname, String workingarea, double commission, String phone, String country) {
         this.agentname = agentname;
         this.workingarea = workingarea;
         this.commission = commission;
         this.phone = phone;
         this.country = country;
+    }
+
+    public Agent(String agentname, String workingarea, double commission, String phone, String country, List<Customer> customers) {
+        this.agentname = agentname;
+        this.workingarea = workingarea;
+        this.commission = commission;
+        this.phone = phone;
+        this.country = country;
+        this.customers = customers;
     }
 
     //***** Getters and Setters *****//
