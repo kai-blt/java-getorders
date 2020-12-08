@@ -35,8 +35,8 @@ public class CustomerController
 
     @GetMapping(value = "/namelike/{likename}", produces = "application/json")
     public ResponseEntity<?> listCustomersWithName(@PathVariable String likename) {
-        List<Order> orders = new ArrayList<>();
-        return new ResponseEntity<>(orders, HttpStatus.OK);
+        List<Customer> customersWithName = customerService.findByCustnameContainingIgnoreCase(likename);
+        return new ResponseEntity<>(customersWithName, HttpStatus.OK);
     }
 
 //    @GetMapping(value = "/orders/count", produces = "application/json")
