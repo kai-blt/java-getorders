@@ -3,6 +3,7 @@ package local.kaiblt.ordersapp.services;
 import local.kaiblt.ordersapp.models.Customer;
 import local.kaiblt.ordersapp.models.Order;
 import local.kaiblt.ordersapp.repositories.CustomersRepository;
+import local.kaiblt.ordersapp.views.CustomerOrderCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,5 +34,10 @@ public class CustomerServiceImpl implements CustomerService {
     public List<Customer> findByCustnameContainingIgnoreCase(String likename) {
         List<Customer> customersContainingName = customersrepo.findByCustnameContainingIgnoreCase(likename);
         return customersContainingName;
+    }
+
+    @Override
+    public List<CustomerOrderCount> getCustomerOrderCount() {
+        return customersrepo.getCustomerOrderCount();
     }
 }

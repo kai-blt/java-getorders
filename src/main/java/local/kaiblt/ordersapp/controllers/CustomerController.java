@@ -3,6 +3,7 @@ package local.kaiblt.ordersapp.controllers;
 import local.kaiblt.ordersapp.models.Customer;
 import local.kaiblt.ordersapp.models.Order;
 import local.kaiblt.ordersapp.services.CustomerServiceImpl;
+import local.kaiblt.ordersapp.views.CustomerOrderCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,9 +40,9 @@ public class CustomerController
         return new ResponseEntity<>(customersWithName, HttpStatus.OK);
     }
 
-//    @GetMapping(value = "/orders/count", produces = "application/json")
-//    public ResponseEntity<?> getAllOrders() {
-//        List<Order> orders = new ArrayList<>();
-//        return new ResponseEntity<>(orders, HttpStatus.OK);
-//    }
+    @GetMapping(value = "/orders/count", produces = "application/json")
+    public ResponseEntity<?> getAllOrders() {
+        List<CustomerOrderCount> customerOrderCount = customerService.getCustomerOrderCount();
+        return new ResponseEntity<>(customerOrderCount, HttpStatus.OK);
+    }
 }
