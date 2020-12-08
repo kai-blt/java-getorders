@@ -10,5 +10,5 @@ public interface CustomerService {
 
     Customer getCustomerById(long id);
 
-    List<Customer> findByNameContainingIgnoreCase(String likename);
+//    List<Customer> findByNameContainingIgnoreCase(String likename);
 }

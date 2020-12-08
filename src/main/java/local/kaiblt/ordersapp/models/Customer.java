@@ -57,6 +57,7 @@ public class Customer {
 
 
     //***** Getters and Setters *****//
+
     public long getCustcode() {
         return custcode;
     }
@@ -143,6 +144,14 @@ public class Customer {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Agent getAgent() {
+        return agent;
+    }
+
+    public void setAgent(Agent agent) {
+        this.agent = agent;
     }
 
     public List<Order> getOrders() {

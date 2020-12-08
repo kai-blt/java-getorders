@@ -37,18 +37,12 @@ public class Agent {
         this.commission = commission;
         this.phone = phone;
         this.country = country;
-    }
-
-    public Agent(String agentname, String workingarea, double commission, String phone, String country, List<Customer> customers) {
-        this.agentname = agentname;
-        this.workingarea = workingarea;
-        this.commission = commission;
-        this.phone = phone;
-        this.country = country;
         this.customers = customers;
     }
 
+
     //***** Getters and Setters *****//
+
     public long getAgentcode() {
         return agentcode;
     }

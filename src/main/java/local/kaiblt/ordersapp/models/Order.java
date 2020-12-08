@@ -48,12 +48,13 @@ public class Order {
     }
 
     //***** Getters and Setters *****//
-    public long getOrdernum() {
+
+    public long getOrdnum() {
         return ordnum;
     }
 
-    public void setOrdernum(long ordernum) {
-        this.ordnum = ordernum;
+    public void setOrdnum(long ordnum) {
+        this.ordnum = ordnum;
     }
 
     public double getOrdamount() {
@@ -64,12 +65,12 @@ public class Order {
         this.ordamount = ordamount;
     }
 
-    public double getAdvanceamaount() {
+    public double getAdvanceamount() {
         return advanceamount;
     }
 
-    public void setAdvanceamaount(double advanceamaount) {
-        this.advanceamount = advanceamaount;
+    public void setAdvanceamount(double advanceamount) {
+        this.advanceamount = advanceamount;
     }
 
     public String getOrderdescription() {
@@ -80,19 +81,19 @@ public class Order {
         this.orderdescription = orderdescription;
     }
 
-    public Set<Payment> getPayments() {
-        return payments;
-    }
-
-    public void setPayments(Set<Payment> payments) {
-        this.payments = payments;
-    }
-
     public Customer getCustomer() {
         return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public Set<Payment> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(Set<Payment> payments) {
+        this.payments = payments;
     }
 }
